@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='mystyle.css')}}">
+</head>
+<body>
+    <a href="/authors">Авторы</a>
+    <a id="book" href="/books">Книги</a>
+    <h1 class="sensation">Тут будет список авторов или источников:</h1>
+    {% for author in authors %}
+       <h2 class="author">{{ author }}</h2>
+    {% endfor %}
+    <!-- <hr>
+    <hr>
+    <hr>
+    <a href="https://jut.su">Ссылка на сайт аниме</a> -->
+</body>
+</html>
