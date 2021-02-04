@@ -24,3 +24,7 @@ a {
     border: 1px solid pink;
     border-radius: 10px;
 }
+
+table, tr, td, th {
+    border: 2px solid black;
+}
