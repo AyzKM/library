@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
@@ -11,13 +12,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </head>
 <body>
-    <style>
-        a {
-            font-family: 'Poppins', sans-serif;
-            color: #333;
-            font-size: large;
-        }
-    </style>
     <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
         <ul class="navbar-nav">
             <li class="nav-item active">
@@ -32,38 +26,39 @@
         </ul>
     </nav>
     <style>
-        h2 {
+        a {
             font-family: 'Poppins', sans-serif;
-            color: #333;
-            font-size: large;
-            padding-left: 20px;
-            padding-top: 20px;
-            padding-bottom: 20px;
         }
-    </style>
 
-    <h2>{{ obj.0 }} - {{ obj.1 }}</h2>
-            
-    {% if obj.2 %}
-        <img src="{{ obj.2 }}" class="img-rounded" alt="Cinque Terre" width="350" height="300" style="padding-left: 20px">
-    {% endif %}
+        div {
+            font-family: 'Poppins', sans-serif;
+            font-size: large;
+            color: #333;
+            text-decoration: solid;
+            padding-left: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
 
-    <br><br>
-
-    <style>
-        .button {
+        button {
             border: none;
             background-color: #e8e8e8;
             border-radius: 8px;
         }
-  
     </style>
-    <div class="container">
-        <button class="button" >
-            <a href="{{ url_for('book_edit', num=obj.3) }}">
-                Edit book info
-            </a>
-        </button>
+    <div>
+        <h3 style="padding-top: 10px;">Edit book info:</h3>
+        <form action="{{ url_for('book_save', num=obj.3) }}" method="POST">
+            <input type="text" name="tale" placeholder="Название книги" value="{{ obj.0 }}">
+            <br><br>
+            <input type="text" name="author" placeholder="Автор" value="{{ obj.1 }}">
+            <br><br>
+            <input type="text" name="image" placeholder="Ссылка на картинку" value="{{ obj.2 }}">
+            <br><br>
+            <div class="container">
+                <button>Save</button>
+            </div>
+        </form>
     </div>
 </body>
 </html>
