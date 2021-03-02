@@ -10,8 +10,19 @@ db = scoped_session(sessionmaker(bind=engine))
 
 @app.route("/")
 def homepage():
-    with engine.connect() as con:
-        books = con.execute("""SELECT * FROM "Book";""")
+    if 'key_word' in request.args:
+        key_word = request.args.get("key_word")
+        session = sessionmaker(engine)()
+        books = session.execute(f"""
+            SELECT * FROM "Book"
+            WHERE name LIKE '%{key_word}%'
+            OR author LIKE '%{key_word}%'
+            ;
+        """)
+        session.commit()
+    else:
+        with engine.connect() as con:
+            books = con.execute("""SELECT * FROM "Book";""")
 
     return render_template("homepage.html", object_list=books)
 
