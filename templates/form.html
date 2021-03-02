@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add</title>
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
@@ -20,11 +19,12 @@
             padding-left: 20px;
         }
         button {
+            font-family: 'Poppins', sans-serif;
             border: none;
             background-color: #e8e8e8;
             border-radius: 8px;
         }
-        a {
+        a, h3 {
             font-family: 'Poppins', sans-serif;
             color: #333;
         }
@@ -41,20 +41,16 @@
                 <a class="nav-link" href="{{ url_for('homepage')}}">Home</a>
             </li>
         </ul>
-    </nav>
-
-    <h3 style="padding-top: 10px;">Add a new book:</h3>
+    </nav> 
+    <h3>Add a new book:</h3>
     <form action="{{ url_for('book_add') }}" method="POST">
-        <input type="text" placeholder="Book" name= "book">
-        <br><br>
         <input type="text" placeholder="Author" name="author">
         <br><br>
-        <!-- <input type="text" placeholder="Link on image" name="image">
-        <br><br> -->
+        <input type="text" placeholder="Book" name="book">
+        <!-- <br><br>
+        <input type="text" placeholder="URL картинки" name="url"> -->
+        <br><br>
         <button>Save</button>
-        <!-- <div class="container">
-            <button>Save</button>
-        </div> -->
     </form>
 </body>
 </html>

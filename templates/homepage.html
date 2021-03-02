@@ -28,7 +28,7 @@
                <a class="nav-link" href="{{ url_for('books') }}">Books</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('book_add')}}">Add book</a>
+                <a class="nav-link" href="{{ url_for('form')}}">Add book</a>
             </li>
         </ul>
     </nav>
@@ -69,11 +69,9 @@
             }
         </style>
         <h4> 
-            <a href="{{ url_for('book', num=loop.index -1 ) }}">
-                {{object.0}}
-            </a>
+            {{ object.name }}
         </h4>
-     {% endfor %}
+        {% endfor %}
 </body>
 </html> 
        

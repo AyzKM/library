@@ -20,14 +20,14 @@
     </style>
     <nav class="navbar navbar-expand-sm bg-secondary navbar-dark">
         <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ url_for('authors') }}">Authors</a>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('books') }}">Books</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="{{ url_for('homepage')}}">Home</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('form') }}">Add book</a>
             </li>
         </ul>
     </nav>
@@ -41,8 +41,8 @@
         <tbody>
             {% for author in authors %}
                 <tr>
-                    <td>{{ author }}</td>
-                    <td>3</td>
+                    <td>{{ author.author }}</td>
+                    <td style="text-align: center;">{{ author.number_of_composition }}</td>
                 </tr>
             {% endfor %}
         </tbody>

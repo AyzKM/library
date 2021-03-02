@@ -48,13 +48,13 @@
     </style>
     <div>
         <h3 style="padding-top: 10px;">Edit book info:</h3>
-        <form action="{{ url_for('book_save', num=obj.3) }}" method="POST">
-            <input type="text" name="tale" placeholder="Название книги" value="{{ obj.0 }}">
+        <form action="{{ url_for('book_edit', id=book_object.id) }}" method="POST">
+            <input type="text" name="book" placeholder="book" value="{{ book_object.name }}">
             <br><br>
-            <input type="text" name="author" placeholder="Автор" value="{{ obj.1 }}">
+            <input type="text" name="author" placeholder="Author" value="{{ book_object.author }}">
             <br><br>
-            <input type="text" name="image" placeholder="Ссылка на картинку" value="{{ obj.2 }}">
-            <br><br>
+            <!-- <input type="text" name="image" placeholder="Ссылка на картинку" value="{{ book_object.image }}">
+            <br><br> -->
             <div class="container">
                 <button>Save</button>
             </div>

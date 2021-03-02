@@ -42,11 +42,11 @@
         }
     </style>
 
-    <h2>{{ obj.0 }} - {{ obj.1 }}</h2>
-            
-    {% if obj.2 %}
+    <h2>{{ obj.name }}</h2>
+    <h2>{{ obj.author }}</h2>
+    <!-- {% if obj.2 %}
         <img src="{{ obj.2 }}" class="img-rounded" alt="Cinque Terre" width="350" height="300" style="padding-left: 20px">
-    {% endif %}
+    {% endif %} -->
 
     <br><br>
 
@@ -60,7 +60,7 @@
     </style>
     <div class="container">
         <button class="button" >
-            <a href="{{ url_for('book_edit', num=obj.3) }}">
+            <a href="{{ url_for('book_edit_form', id=obj.id) }}">
                 Edit book info
             </a>
         </button>
