@@ -120,15 +120,15 @@ def book_add():
     f = request.form
     book = f["book"]
     author = f["author"]
-    # url = f["url"]
+    image = f["image"]
 
     ids = db.execute('SELECT id FROM "Book" ORDER BY id DESC;')
     max_id = ids.first().id
     c_id = max_id + 1
 
     db.execute(f'''
-        INSERT INTO "Book" (id, name, author)
-        VALUES ({c_id}, '{book}', '{author}');   
+        INSERT INTO "Book" (id, name, author, image)
+        VALUES ({c_id}, '{book}', '{author}', '{image}');   
     ''')
 
     db.commit()
@@ -200,12 +200,13 @@ def book_edit_form(id):
 def book_edit(id):
     name = request.form.get("book")
     author = request.form.get("author")
-        # image = request.form.get("image")
+    image = request.form.get("image")
     db.execute(f'''
         UPDATE "Book"
         SET
         name = '{name}',
-        author = '{author}'
+        author = '{author}',
+        image = '{image}'
         WHERE id = {id};
     ''')
     db.commit()

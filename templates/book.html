@@ -42,12 +42,10 @@
         }
     </style>
 
-    <h2>{{ obj.name }}</h2>
-    <h2>{{ obj.author }}</h2>
-    <!-- {% if obj.2 %}
-        <img src="{{ obj.2 }}" class="img-rounded" alt="Cinque Terre" width="350" height="300" style="padding-left: 20px">
-    {% endif %} -->
-
+    <h2>{{ obj.name }} - {{ obj.author }}</h2>
+    {% if obj.image %}
+        <img src="{{ obj.image }}" alt="image">
+    {% endif %}
     <br><br>
 
     <style>
