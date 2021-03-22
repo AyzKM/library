@@ -12,6 +12,6 @@ class Book(Base):
     name = Column(VARCHAR(255), nullable = False)
     author = Column(VARCHAR(255), nullable = False)
     image = Column(VARCHAR(255))
-    number_of_composition = Column(Integer)
+
 
 Base.metadata.create_all(bind=engine)  

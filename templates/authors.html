@@ -35,16 +35,15 @@
         <thead>
             <tr>
                 <th>Author</th>
-                <th>Number of Compositions</th>
             </tr>
         </thead>
         <tbody>
             {% for author in authors %}
                 <tr>
                     <td>{{ author.author }}</td>
-                    <td style="text-align: center;">{{ author.number_of_composition }}</td>
                 </tr>
             {% endfor %}
+
         </tbody>
     </table>
  </body>
